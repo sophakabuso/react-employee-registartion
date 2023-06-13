@@ -1,6 +1,5 @@
 import React,{useState} from "react";
-
-const AddForm = ({onAdd})=> {
+function AddForm ({onAdd}) {
     const [employee, setEmployee] = useState({
         name:'',surname:'',email:'',phone:'',image:'',position:'',id:'',
     });

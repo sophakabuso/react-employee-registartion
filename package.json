@@ -18,7 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "json-server": "json-server --watch db.json --port 5000",
-    "dev": "concurrently \"npm start\" \"npm run json-server\"",
+    "dev": "concurrently \"npm start\" \"npm run json-server\"@babel/plugin-proposal-private-property-in-object",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

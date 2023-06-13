@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DeleteButton = ({ onDelete, employeeId }) => {
+function DeleteButton  ({ onDelete, employeeId })  {
   const handleClick = () => {
     onDelete(employeeId);
   };

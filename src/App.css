@@ -5,8 +5,16 @@
 body{
   background-color: aliceblue;
   font-family: monospace;
+  
 }
 .container-app {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height:500px;
+  align-items: center;
+ 
+
+
 }
 
