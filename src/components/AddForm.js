@@ -42,7 +42,7 @@ function AddForm ({onAdd}) {
                 value={employee.surname}
                 onChange={handleInputChange}
                 placeholder="Surname"
-              />
+              /><br/>
               <input
                 type="email"
                 name="email"
@@ -56,7 +56,7 @@ function AddForm ({onAdd}) {
                 value={employee.phone}
                 onChange={handleInputChange}
                 placeholder="Phone"
-              />
+              /><br/>
               <input
                 type="text"
                 name="image"
@@ -70,14 +70,14 @@ function AddForm ({onAdd}) {
                 value={employee.position}
                 onChange={handleInputChange}
                 placeholder="Position"
-              />
+              /><br/>
               <input
                 type="text"
                 name="id"
                 value={employee.id}
                 onChange={handleInputChange}
                 placeholder="ID"
-              />
+              /><br/>
               <button type="submit">Add Employee</button>
             </form>
           

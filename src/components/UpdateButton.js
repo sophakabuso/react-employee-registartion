@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UpdateButton= ({ onUpdate, employeeId, employee }) => {
+function UpdateButton ({ onUpdate, employeeId, employee })  {
   const handleClick = () => {
     onUpdate(employeeId, employee);
   };

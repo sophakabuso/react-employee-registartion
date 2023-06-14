@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SearchForm = ({ onSearch }) => {
+function SearchForm ({ onSearch }) {
   const [searchId, setSearchId] = useState('');
 
   const handleSearch = (e) => {
@@ -13,8 +13,8 @@ const SearchForm = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={searchId} onChange={handleSearch} placeholder="Enter ID" />
+    <form onSubmit={handleSubmit} className='search-form'>
+      <input type="text" value={searchId} onChange={handleSearch} placeholder="Enter ID" /><br/>
       <button type="submit">Search</button>
     </form>
   );

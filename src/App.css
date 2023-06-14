@@ -7,14 +7,26 @@ body{
   font-family: monospace;
   
 }
-.container-app {
+.container-app{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height:500px;
+  height:100%;
   align-items: center;
- 
-
+  width:100%;
+}
+button{
+  width: 300px;
+  height: 30px;
+  margin-left: 45px;
+  margin-top:4px;
 
 }
-
+input{
+  width: 500px;
+  height: 50px;
+  background-color: rgb(26, 113, 190);
+  border: none;
+  padding-left: 15px;
+  margin-top: 5px;
+}
