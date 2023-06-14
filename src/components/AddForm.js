@@ -71,14 +71,14 @@ function AddForm ({onAdd}) {
                 onChange={handleInputChange}
                 placeholder="Position"
               /><br/>
-              <input
+              <input className="input-id"
                 type="text"
                 name="id"
                 value={employee.id}
                 onChange={handleInputChange}
                 placeholder="ID"
               /><br/>
-              <button type="submit">Add Employee</button>
+              <button type="submit" className="submit-form">Add Employee</button>
             </form>
           
         

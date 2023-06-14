@@ -108,8 +108,9 @@ If there is an error, it is logged to the console.*/
     <h2>Add Employee</h2>
     <AddForm onAdd={addEmployee} />
     </div>
-    <div>
     <h2>Employee List</h2>
+    <div className='employee-list'>
+
     <ul>
       {employees.map((employee) => (
         <li key={employee.id}>
