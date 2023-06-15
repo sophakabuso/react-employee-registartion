@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import AddForm from './components/AddForm';
+
 import axios from 'axios';
+import './App.css';
+
+import { useState, useEffect } from 'react';
+import AddForm from './components/AddForm';
 import SearchForm from './components/SearchForm';
 import DeleteButton from './components/DeleteButton';
 import UpdateButton from './components/UpdateButton';
+
 
 
 /* React component called App. It is responsible for rendering an employee registration
@@ -99,22 +102,22 @@ If there is an error, it is logged to the console.*/
   Each employee is displayed with their name, surname, and position.
   Each employee also has a delete button and an update button, which are components that trigger the respective actions when clicked. */
     <div className="container-app">
-    <h1>Employee Registration</h1>
-    <div className="search-id">   
-    <h2>Search Employee by ID</h2>
-    <SearchForm onSearch={searchEmployeeById} />
+      <h1 class='.container-fluid'>Employee Registration</h1> 
+      <div className="search-id">   
+      <h2>Search Employee by ID</h2>
+      <SearchForm onSearch={searchEmployeeById} />
     </div>
     <div className="add-employee">
     <h2>Add Employee</h2>
     <AddForm onAdd={addEmployee} />
     </div>
-    <h2>Employee List</h2>
+    
     <div className='employee-list'>
-
-    <ul>
+      <h2 className='heading-list'>Employee List</h2>
+      <ul>
       {employees.map((employee) => (
         <li key={employee.id}>
-          {employee.name} {employee.surname} ({employee.position})
+          {employee.name} {employee.surname} {employee.position}
           <DeleteButton onDelete={deleteEmployee} employeeId={employee.id} />
           <UpdateButton onUpdate={updateEmployee} employeeId={employee.id} employee={employee} />
         </li>
