@@ -1,15 +1,11 @@
 import React from 'react';
 
-function DeleteButton  ({ onDelete, employeeId })  {
-  const handleClick = () => {
-    onDelete(employeeId);
-  };
-
+function DeleteButton({ onDelete }) {
   return (
-    <button onClick={handleClick}>
+    <button className="btn btn-danger delete-button " onClick={onDelete}>
       Delete
     </button>
   );
-};
+}
 
 export default DeleteButton;

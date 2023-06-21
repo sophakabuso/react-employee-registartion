@@ -1,15 +1,15 @@
 import React from 'react';
 
-function UpdateButton ({ onUpdate, employeeId, employee })  {
+function UpdateButton({ onUpdate, employee }) {
   const handleClick = () => {
-    onUpdate(employeeId, employee);
+    onUpdate(employee);
   };
 
   return (
-    <button onClick={handleClick}>
+    <button className="btn btn-primary" onClick={handleClick}>
       Update
     </button>
   );
-};
+}
 
 export default UpdateButton;
