@@ -7,3 +7,102 @@ body{
   font-family: monospace;
   
 }
+.container {
+  background-color: #8eb0f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #a71d2a;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #1d7d33;
+}
+
+.search-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.update-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.update-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.update-form .form-group {
+  margin-bottom: 15px;
+}
+
+.update-form .form-label {
+  font-weight: bold;
+}
+
+.update-form .btn-primary {
+  margin-right: 10px;
+}
+
+.update-form .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.update-form .btn-secondary:hover {
+  background-color: #555e63;
+}

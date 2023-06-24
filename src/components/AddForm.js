@@ -1,141 +1,129 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
-function AddForm({ onAdd }) {
+function AddForm() {
+  const history = useHistory();
   const [employee, setEmployee] = useState({
     name: '',
     surname: '',
     email: '',
     phone: '',
     position: '',
-    image: '',
+    id:'',
+    photo:''
   });
 
-  const handleInputChange = (e) => {
-    setEmployee({ ...employee, [e.target.name]: e.target.value });
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setEmployee((prevEmployee) => ({ ...prevEmployee, [name]: value }));
   };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setEmployee({ ...employee, image: reader.result });
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onAdd(employee);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/employees', employee);
+      history.push('/');
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="add-form">
-      <div className="mb-3">
-        <label htmlFor="name" className="form-label">
-          Name
-        </label>
-        <input
-          type="text"
-          name="name"
-          value={employee.name}
-          onChange={handleInputChange}
-          placeholder="Enter name"
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="surname" className="form-label">
-          Surname
-        </label>
-        <input
-          type="text"
-          name="surname"
-          value={employee.surname}
-          onChange={handleInputChange}
-          placeholder="Enter surname"
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="email" className="form-label">
-          Email
-        </label>
-        <input
-          type="email"
-          name="email"
-          value={employee.email}
-          onChange={handleInputChange}
-          placeholder="Enter email"
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="phone" className="form-label">
-          Phone
-        </label>
-        <input
-          type="text"
-          name="phone"
-          value={employee.phone}
-          onChange={handleInputChange}
-          placeholder="Enter phone"
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="mb-3" >
-        <label htmlFor="position" className="form-label">
-          Position
-        </label>
-        <input
-          type="text"
-          name="position"
-          value={employee.position}
-          onChange={handleInputChange}
-          placeholder="Enter position"
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="mb-3">
-      <label htmlFor="position" className="form-label">
-        ID
-        </label>
-         <input
-                type="text"
-                name="id"
-                value={employee.id}
-                onChange={handleInputChange}
-                placeholder="ID"
-                className="form-control"
-                required
-              />
-      </div>        
-      <div className="mb-3">
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageUpload}
-          className="form-control"
-        />
-        {employee.image && (
-          <img
-            src={employee.image}
-            alt="Preview"
-            className="img-fluid mt-2"
-            style={{ maxHeight: '1px', maxWidth:'1px' }}
+    <div>
+      <h2>Add Employee</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={employee.name}
+            onChange={handleInputChange}
+            required
+            className="form-control"
           />
-        )}
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Add Employee
-      </button>
-    </form>
+        </div>
+        <div className="form-group">
+          <label htmlFor="surname">Surname</label>
+          <input
+            type="text"
+            id="surname"
+            name="surname"
+            placeholder='Enter surname'
+            value={employee.surname}
+            onChange={handleInputChange}
+            required
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={employee.email}
+            onChange={handleInputChange}
+            required
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={employee.phone}
+            onChange={handleInputChange}
+            required
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="position">Position</label>
+          <input
+            type="text"
+            id="position"
+            name="position"
+            value={employee.position}
+            onChange={handleInputChange}
+            required
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+        <label htmlFor="id">ID</label>
+          <input
+            type="id"
+            id="id"
+            name="id"
+            value={employee.id}
+            onChange={handleInputChange}
+            required
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Photo</label>
+          <input
+            type="img"
+            id="photo"
+            name="photo"
+            value={employee.photo}
+            onChange={handleInputChange}
+            required
+            className="form-control"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Add Employee
+        </button>
+      </form>
+    </div>
   );
 }
 
 export default AddForm;
-

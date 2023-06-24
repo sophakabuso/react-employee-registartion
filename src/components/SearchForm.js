@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 
 function SearchForm({ onSearch }) {
-  const [searchId, setSearchId] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = (e) => {
-    setSearchId(e.target.value);
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(searchId);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSearch(searchQuery);
   };
 
   return (
     <form onSubmit={handleSubmit} className="search-form">
-      <div className="input-group mb-3">
+      <div className="form-group">
         <input
           type="text"
-          value={searchId}
-          onChange={handleSearch}
-          placeholder="Enter ID"
+          placeholder="Search employees"
+          value={searchQuery}
+          onChange={handleInputChange}
           className="form-control"
         />
-        <button type="submit" className="btn btn-primary">Search</button>
       </div>
+      <button type="submit" className="btn btn-primary">
+        Search
+      </button>
     </form>
   );
 }

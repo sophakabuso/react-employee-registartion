@@ -1,3 +1,42 @@
 {
-  "employees": []
+  "employees": [
+    {
+      "name": "Sophakama ",
+      "surname": "Buso",
+      "email": "sopha.buso@gmail.com",
+      "phone": "123",
+      "position": "traine",
+      "id": "5EN4m1s",
+      "photo": "d"
+    },
+    {
+      "name": "zane",
+      "surname": "Da Gamma",
+      "email": "ds@jjjj.vfo",
+      "phone": "01214",
+      "position": "Dev 1445",
+      "ID": "4000",
+      "photo": "err",
+      "id": "951hUap"
+    },
+    {
+      "name": "Owen",
+      "surname": "wew",
+      "email": "eww@dd.h",
+      "phone": "we",
+      "position": "desewe",
+      "photo": "ee",
+      "ID": "e",
+      "id": "RW8r6cA"
+    },
+    {
+      "name": "Sophakama",
+      "surname": "Buso",
+      "email": "sosp@ju.cid",
+      "phone": "1425",
+      "position": "dev",
+      "id": "1000",
+      "photo": "dd"
+    }
+  ]
 }
