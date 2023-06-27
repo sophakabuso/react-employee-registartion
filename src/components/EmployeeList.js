@@ -48,9 +48,9 @@ function EmployeeList() {
 
   return (
     <div>
-      <h2>Employee List</h2>
+      <h2 className='heading-list'>EMPLOYEE LIST</h2>
       <SearchForm onSearch={searchEmployee} />
-      <Link to="/add" className="btn btn-success mb-3">
+      <Link to="/add" className="btn-list">
         Add Employee
       </Link>
       {employees.map((employee) => (

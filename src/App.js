@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <h1>Employee Registration</h1>
+        <h1 className='app-heading'>EMPLOYEE REGISTRATION</h1>
         <Switch>
           <Route exact path="/" component={EmployeeList} />
           <Route path="/add" component={AddForm} />

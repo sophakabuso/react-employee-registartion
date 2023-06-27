@@ -2,115 +2,47 @@
   margin: 0;
   padding: 0;
 }
-/* styles.css */
-
-/* Global Styles */
-
+/* App.css */
 body {
-  margin: 0;
-  padding: 0;
+  background-color: #1f1f1f;
+  color: #ffffff;
   font-family: Arial, sans-serif;
 }
 
-/* styles.css */
-
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
-  color: #fff;
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.form-group-addform {
-  margin-bottom: 20px;
-}
-
-.form-control-addform {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #333;
-  color: #fff;
-}
-
-.btn-addform {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 4px;
   padding: 20px;
+}
+
+.app-heading {
+  text-align: center;
+  font-size: 24px;
   margin-bottom: 20px;
-  background-color: #222;
 }
 
-.card-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.card-text {
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.img-card {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.btn-card {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.btn-delete {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+/* EmployeeList.css */
+.heading-list {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .btn-list {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #5a67d8;
+  color: #ffffff;
   border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
   margin-bottom: 20px;
 }
 
+/* SearchForm.css */
 .search-form {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .form-group-search {
@@ -118,20 +50,99 @@ h1 {
 }
 
 .form-control-search {
-  width: 100%;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: none;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #333;
-  color: #fff;
+  width: 100%;
 }
 
 .btn-search {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #5a67d8;
+  color: #ffffff;
   border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+/* AddForm.css */
+.form-group-addform {
+  margin-bottom: 10px;
+}
+
+.add-label {
+  font-weight: bold;
+}
+
+.form-control-addform {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn-addform {
+  background-color: #5a67d8;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* EmployeeCard.css */
+.card {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.img-card {
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.btn-card,
+.btn-delete {
+  background-color: #5a67d8;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* UpdateForm.css */
+.form-group-update {
+  margin-bottom: 10px;
+}
+
+.form-control-update {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn-update {
+  background-color: #5a67d8;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
   cursor: pointer;
 }
