@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -12,29 +12,33 @@ function UpdateForm() {
     phone: '',
     position: '',
     id:'',
-    photo:''
+    imageUrl:''
   });
 
-  useEffect(() => {
-    fetchEmployee();
-  }, []);
-
-  const fetchEmployee = async () => {
+  const fetchEmployee = useCallback (async () => {
     try {
       const response = await axios.get(`http://localhost:5000/employees/${id}`);
       setEmployee(response.data);
     } catch (error) {
       console.error(error);
     }
-  };
+  },[id]);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+
+  useEffect(() => {
+    fetchEmployee();
+  }, [fetchEmployee]);
+
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setEmployee((prevEmployee) => ({
       ...prevEmployee,
       [name]: value,
     }));
   };
+   
+ 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -47,10 +51,10 @@ function UpdateForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="update-form">
+    <form onSubmit={handleSubmit} className="form-update">
       <h2>Update Employee</h2>
-      <div className="form-group">
-        <label htmlFor="name">Name</label>
+      <div className="form-group-update">
+        <label className='add-label'>Name</label>
         <input
           type="text"
           id="name"
@@ -60,8 +64,8 @@ function UpdateForm() {
           required
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="surname">Surname</label>
+      <div className="form-group-update">
+        <label className='add-label'>Surname</label>
         <input
           type="text"
           id="surname"
@@ -71,8 +75,8 @@ function UpdateForm() {
           required
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
+      <div className="form-group-update">
+        <label className='add-label'>Email</label>
         <input
           type="email"
           id="email"
@@ -82,8 +86,8 @@ function UpdateForm() {
           required
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="phone">Phone</label>
+      <div className="form-group-update">
+        <label className='add-label'>Phone</label>
         <input
           type="tel"
           id="phone"
@@ -93,8 +97,8 @@ function UpdateForm() {
           required
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="position">Position</label>
+      <div className="form-group-update">
+        <label className='add-label'>Position</label>
         <input
           type="text"
           id="position"
@@ -104,19 +108,19 @@ function UpdateForm() {
           required
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="photo">Photo</label>
-        <input
-          type="img"
-          id="photo"
-          name="photo"
-          value={employee.photo}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="id">ID</label>
+      <div className="form-group-update">
+          <label className='add-label'>Image URL</label>
+          <input
+            type="url"
+            id="imageUrl"
+            name="imageUrl"
+            value={employee.imageUrl}
+            onChange={handleInputChange}
+            className="form-control"
+          />
+        </div>
+       <div className="form-group-update">
+        <label className='add-label'>ID</label>
         <input
           type="id"
           id="id"
@@ -126,7 +130,7 @@ function UpdateForm() {
           required
         />
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn-update">
         Update Employee
       </button>
     </form>

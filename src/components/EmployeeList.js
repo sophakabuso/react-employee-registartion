@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom';
 function EmployeeList() {
     //state variables to hold the search results:
   const [employees, setEmployees] = useState([]);
-   //state variables to hold the search results:
-  const [searchQuery, setSearchQuery] = useState([]);
+   
+  
 
   useEffect(() => {
     fetchEmployees();
@@ -19,19 +19,22 @@ function EmployeeList() {
 
   const fetchEmployees = async () => {
     try {
-      let url = 'http://localhost:5000/employees';
-      if (searchQuery) {
-        url += `?search=${encodeURIComponent(searchQuery)}`;
-      }
-      const response = await axios.get(url);
+      const response = await axios.get('http://localhost:5000/employees');
       setEmployees(response.data);
     } catch (error) {
       console.error(error);
     }
   };
 
-   const handleSearch = (id) => {
-    setSearchQuery(id);
+  const searchEmployee = async (id) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/employees/${id}`
+      );
+      setEmployees(response.data ? [response.data] : []);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleDelete = async (id) => {
@@ -46,7 +49,7 @@ function EmployeeList() {
   return (
     <div>
       <h2>Employee List</h2>
-      <SearchForm onSearch={handleSearch} />
+      <SearchForm onSearch={searchEmployee} />
       <Link to="/add" className="btn btn-success mb-3">
         Add Employee
       </Link>

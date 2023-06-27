@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 function SearchForm({ onSearch }) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchId, setsearchId] = useState('');
 
-  const handleInputChange = (event) => {
-    setSearchQuery(event.target.value);
+  const handleInputChange = (e) => {
+    setsearchId(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSearch(searchQuery);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(searchId);
   };
 
   return (
@@ -18,7 +18,7 @@ function SearchForm({ onSearch }) {
         <input
           type="text"
           placeholder="Search employees"
-          value={searchQuery}
+          value={searchId}
           onChange={handleInputChange}
           className="form-control"
         />

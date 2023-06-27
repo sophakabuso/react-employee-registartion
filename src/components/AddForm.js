@@ -11,16 +11,17 @@ function AddForm() {
     phone: '',
     position: '',
     id:'',
-    photo:''
+    imageUrl:''
   });
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setEmployee((prevEmployee) => ({ ...prevEmployee, [name]: value }));
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       await axios.post('http://localhost:5000/employees', employee);
       history.push('/');
@@ -33,8 +34,8 @@ function AddForm() {
     <div>
       <h2>Add Employee</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
+        <div className="form-group-addform">
+          <label className='add-label'>Name</label>
           <input
             type="text"
             id="name"
@@ -42,11 +43,11 @@ function AddForm() {
             value={employee.name}
             onChange={handleInputChange}
             required
-            className="form-control"
+            className="form-control-addform"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="surname">Surname</label>
+        <div className="form-group-addform">
+          <label className='add-label'>Surname</label>
           <input
             type="text"
             id="surname"
@@ -55,11 +56,11 @@ function AddForm() {
             value={employee.surname}
             onChange={handleInputChange}
             required
-            className="form-control"
+            className="form-control-addform"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
+        <div className="form-group-addform">
+          <label className='add-label'>Email</label>
           <input
             type="email"
             id="email"
@@ -67,11 +68,11 @@ function AddForm() {
             value={employee.email}
             onChange={handleInputChange}
             required
-            className="form-control"
+            className="form-control-addform"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="phone">Phone</label>
+        <div className="form-group-addform">
+          <label className='add-label'>Phone</label>
           <input
             type="tel"
             id="phone"
@@ -79,11 +80,11 @@ function AddForm() {
             value={employee.phone}
             onChange={handleInputChange}
             required
-            className="form-control"
+            className="form-control-addform"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="position">Position</label>
+        <div className="form-group-addform">
+          <label className='add-label'>Position</label>
           <input
             type="text"
             id="position"
@@ -91,11 +92,11 @@ function AddForm() {
             value={employee.position}
             onChange={handleInputChange}
             required
-            className="form-control"
+            className="form-control-addform"
           />
         </div>
-        <div className="form-group">
-        <label htmlFor="id">ID</label>
+        <div className="form-group-addform">
+        <label className='add-label'>ID</label>
           <input
             type="id"
             id="id"
@@ -103,22 +104,21 @@ function AddForm() {
             value={employee.id}
             onChange={handleInputChange}
             required
-            className="form-control"
+            className="form-control-addform"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="phone">Photo</label>
+        <div className="form-group-addform">
+          <label className='add-label'>Image URL</label>
           <input
-            type="img"
-            id="photo"
-            name="photo"
-            value={employee.photo}
+            type="url"
+            id="imageUrl"
+            name="imageUrl"
+            value={employee.imageUrl}
             onChange={handleInputChange}
-            required
-            className="form-control"
+            className="form-control-addform"
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn-addform">
           Add Employee
         </button>
       </form>
