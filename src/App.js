@@ -13,7 +13,7 @@ function App() {
       <div className="container">
         <h1 className='app-heading'>EMPLOYEE REGISTRATION</h1>
         <Switch>
-          <Route exact path="/" component={EmployeeList} />
+          <Route exact path="/" component={EmployeeList}/>
           <Route path="/add" component={AddForm} />
           <Route path="/update/:id" component={UpdateForm} />
          
